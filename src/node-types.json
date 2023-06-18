@@ -224,6 +224,14 @@
         "named": true
       },
       {
+        "type": "lock_disable_statement",
+        "named": true
+      },
+      {
+        "type": "lock_enable_statement",
+        "named": true
+      },
+      {
         "type": "return_statement",
         "named": true
       },
@@ -902,6 +910,14 @@
         },
         {
           "type": "labeled_statement",
+          "named": true
+        },
+        {
+          "type": "lock_disable_statement",
+          "named": true
+        },
+        {
+          "type": "lock_enable_statement",
           "named": true
         },
         {
@@ -1892,6 +1908,38 @@
         "types": [
           {
             "type": "string_literal",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "lock_disable_statement",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "lock_enable_statement",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "parenthesized_expression",
             "named": true
           }
         ]
@@ -3585,6 +3633,62 @@
     "named": true
   },
   {
+    "type": "raw_spin_lock",
+    "named": false
+  },
+  {
+    "type": "raw_spin_lock_bh",
+    "named": false
+  },
+  {
+    "type": "raw_spin_lock_bh_nested",
+    "named": false
+  },
+  {
+    "type": "raw_spin_lock_irq",
+    "named": false
+  },
+  {
+    "type": "raw_spin_lock_irqsave",
+    "named": false
+  },
+  {
+    "type": "raw_spin_lock_irqsave_nested",
+    "named": false
+  },
+  {
+    "type": "raw_spin_lock_nest_lock",
+    "named": false
+  },
+  {
+    "type": "raw_spin_lock_nested",
+    "named": false
+  },
+  {
+    "type": "raw_spin_trylock",
+    "named": false
+  },
+  {
+    "type": "raw_spin_unlock",
+    "named": false
+  },
+  {
+    "type": "raw_spin_unlock_bh",
+    "named": false
+  },
+  {
+    "type": "raw_spin_unlock_irq",
+    "named": false
+  },
+  {
+    "type": "raw_spin_unlock_irqrestore",
+    "named": false
+  },
+  {
+    "type": "raw_spin_unlock_wait",
+    "named": false
+  },
+  {
     "type": "register",
     "named": false
   },
@@ -3606,6 +3710,62 @@
   },
   {
     "type": "sizeof",
+    "named": false
+  },
+  {
+    "type": "spin_lock",
+    "named": false
+  },
+  {
+    "type": "spin_lock_bh",
+    "named": false
+  },
+  {
+    "type": "spin_lock_bh_nested",
+    "named": false
+  },
+  {
+    "type": "spin_lock_irq",
+    "named": false
+  },
+  {
+    "type": "spin_lock_irqsave",
+    "named": false
+  },
+  {
+    "type": "spin_lock_irqsave_nested",
+    "named": false
+  },
+  {
+    "type": "spin_lock_nest_lock",
+    "named": false
+  },
+  {
+    "type": "spin_lock_nested",
+    "named": false
+  },
+  {
+    "type": "spin_trylock",
+    "named": false
+  },
+  {
+    "type": "spin_unlock",
+    "named": false
+  },
+  {
+    "type": "spin_unlock_bh",
+    "named": false
+  },
+  {
+    "type": "spin_unlock_irq",
+    "named": false
+  },
+  {
+    "type": "spin_unlock_irqrestore",
+    "named": false
+  },
+  {
+    "type": "spin_unlock_wait",
     "named": false
   },
   {

@@ -635,7 +635,11 @@ module.exports = grammar({
       $.break_statement,
       $.continue_statement,
       $.goto_statement,
+      $.lock_enable_statement,
+      $.lock_disable_statement,
+  
     ),
+
 
     labeled_statement: $ => seq(
       field('label', $._statement_identifier),
@@ -725,6 +729,51 @@ module.exports = grammar({
       'goto',
       field('label', $._statement_identifier),
       ';',
+    ),
+
+    lock_enable_statement: $ => seq(
+      choice(
+        "spin_lock",
+        "spin_lock_bh",
+        "spin_trylock",
+        "spin_lock_irq",
+        "spin_lock_irqsave",
+	"spin_lock_nested",
+	"spin_lock_bh_nested",
+	"spin_lock_nest_lock",
+	"spin_lock_irqsave_nested",
+        "raw_spin_lock",
+        "raw_spin_lock_bh",
+        "raw_spin_trylock",
+	"raw_spin_lock_irq",
+	"raw_spin_lock_irqsave",
+	"raw_spin_lock_nested",
+	"raw_spin_lock_bh_nested",
+	"raw_spin_lock_nest_lock",
+	"raw_spin_lock_irqsave_nested"
+      ),
+      field('arguments', $.parenthesized_expression),
+      ';',
+    ),
+
+
+
+    lock_disable_statement: $ => seq(
+	choice(
+	"spin_unlock",
+        "spin_unlock_bh",
+        "spin_unlock_irq",
+        "spin_unlock_irqrestore",
+	"spin_unlock_wait",
+        "raw_spin_unlock",
+        "raw_spin_unlock_bh",
+        "raw_spin_unlock_irq",
+        "raw_spin_unlock_irqrestore",
+	"raw_spin_unlock_wait",
+	),
+      	field('arguments', $.parenthesized_expression),
+      	';',
+
     ),
 
     // Expressions

@@ -3870,6 +3870,14 @@
         {
           "type": "SYMBOL",
           "name": "goto_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "lock_enable_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "lock_disable_statement"
         }
       ]
     },
@@ -4319,6 +4327,162 @@
           "content": {
             "type": "SYMBOL",
             "name": "_statement_identifier"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "lock_enable_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "spin_lock"
+            },
+            {
+              "type": "STRING",
+              "value": "spin_lock_bh"
+            },
+            {
+              "type": "STRING",
+              "value": "spin_trylock"
+            },
+            {
+              "type": "STRING",
+              "value": "spin_lock_irq"
+            },
+            {
+              "type": "STRING",
+              "value": "spin_lock_irqsave"
+            },
+            {
+              "type": "STRING",
+              "value": "spin_lock_nested"
+            },
+            {
+              "type": "STRING",
+              "value": "spin_lock_bh_nested"
+            },
+            {
+              "type": "STRING",
+              "value": "spin_lock_nest_lock"
+            },
+            {
+              "type": "STRING",
+              "value": "spin_lock_irqsave_nested"
+            },
+            {
+              "type": "STRING",
+              "value": "raw_spin_lock"
+            },
+            {
+              "type": "STRING",
+              "value": "raw_spin_lock_bh"
+            },
+            {
+              "type": "STRING",
+              "value": "raw_spin_trylock"
+            },
+            {
+              "type": "STRING",
+              "value": "raw_spin_lock_irq"
+            },
+            {
+              "type": "STRING",
+              "value": "raw_spin_lock_irqsave"
+            },
+            {
+              "type": "STRING",
+              "value": "raw_spin_lock_nested"
+            },
+            {
+              "type": "STRING",
+              "value": "raw_spin_lock_bh_nested"
+            },
+            {
+              "type": "STRING",
+              "value": "raw_spin_lock_nest_lock"
+            },
+            {
+              "type": "STRING",
+              "value": "raw_spin_lock_irqsave_nested"
+            }
+          ]
+        },
+        {
+          "type": "FIELD",
+          "name": "arguments",
+          "content": {
+            "type": "SYMBOL",
+            "name": "parenthesized_expression"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "lock_disable_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "spin_unlock"
+            },
+            {
+              "type": "STRING",
+              "value": "spin_unlock_bh"
+            },
+            {
+              "type": "STRING",
+              "value": "spin_unlock_irq"
+            },
+            {
+              "type": "STRING",
+              "value": "spin_unlock_irqrestore"
+            },
+            {
+              "type": "STRING",
+              "value": "spin_unlock_wait"
+            },
+            {
+              "type": "STRING",
+              "value": "raw_spin_unlock"
+            },
+            {
+              "type": "STRING",
+              "value": "raw_spin_unlock_bh"
+            },
+            {
+              "type": "STRING",
+              "value": "raw_spin_unlock_irq"
+            },
+            {
+              "type": "STRING",
+              "value": "raw_spin_unlock_irqrestore"
+            },
+            {
+              "type": "STRING",
+              "value": "raw_spin_unlock_wait"
+            }
+          ]
+        },
+        {
+          "type": "FIELD",
+          "name": "arguments",
+          "content": {
+            "type": "SYMBOL",
+            "name": "parenthesized_expression"
           }
         },
         {
